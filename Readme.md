@@ -24,6 +24,33 @@ Default login U/P:  pi/raspberry
 
 ---
 
+set root's password (this must be done from the console)
+``` shell
+sudo passwd root
+logout
+```
+
+login as root
+
+``` shell
+usermod -l newusername pi
+usermod -m -d /home/newusername newusername
+passwd newusername
+logout
+```
+
+login as newusername
+
+``` shell
+#test sudo access
+sudo apt-get update
+
+#disable root access
+sudo passwd -l root 
+```
+
+---
+
 Now `sudo reboot` and make sure it connects to WiFi.  You make want to login to the console and run `ifconfig -a` to find out what IP address was assigned
 
 You *should* be done with the keyboard and monitor at this point.  Make sure you can login (ie `ssh pi@<ip address>`) before disconnect them.
@@ -39,6 +66,9 @@ filecontents
 
 chmod 755 update.sh
 ```
+
+
+
 
 ## install [PiVPN](http://www.pivpn.io/)
 
