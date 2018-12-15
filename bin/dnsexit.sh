@@ -3,6 +3,12 @@
 # http://www.dnsexit.com/Direct.sv?cmd=userIpClients
 # http://downloads.dnsexit.com/ipUpdateDev.doc
 
+#to setup:
+#chmod 750 /home/userid/bin/dnsexit.sh
+#cat >> /etc/crontab << EOF
+#*/2 * * * * userid /home/userid/bin/dnsexit.sh
+#EOF
+
 #pull the params from the config file
 . ~/etc/dnsexit.conf
 
